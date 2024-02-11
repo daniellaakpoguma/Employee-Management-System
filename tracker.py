@@ -2,12 +2,16 @@ from tkinter import *
 
 root = Tk()
 
+e = Entry(root, bg = "blue", width=50)
+e.pack()
+e.insert(0,"Enter Your Name:")
+
 def myClick():
-    myLabel = Label(root, text="Look, i cliked the button!")
+    hello = "Hello" + e.get()
+    myLabel = Label(root, text=hello)
     myLabel.pack()
 
 myButton = Button(root, text="Click Me", command=myClick, bg="blue")
 myButton.pack()
-myButton.grid()
 
 root.mainloop()
