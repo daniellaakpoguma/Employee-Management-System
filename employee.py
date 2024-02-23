@@ -4,7 +4,7 @@
 from tkinter import * 
 from PIL import Image, ImageTk
 from tkcalendar import DateEntry
-from management import uploadPhoto
+from management import validatePhoneNumber, uploadPhoto
 
 # =========================================== Window Configurations ========================================================
 root = Tk()
@@ -88,11 +88,17 @@ genderCheckbox = gender_menu = OptionMenu(root, genderVar, *genderOptions).place
 
 # Phone 1
 phoneOneLabel  = Label(root, text= "Phone 1:").place(x=400, y=100)
-phoneOneEntry = Entry(root).place(x=460, y= 100, width= 130)
+phoneOneEntry = Entry(root)
+phoneOneEntry.place(x=460, y=100, width=130)
+phoneOneEntry.bind("<FocusOut>", lambda event: validatePhoneNumber(phoneOneEntry))
+
 
 # Phone 2
 phoneTwoLabel  = Label(root, text= "Phone 2:").place(x=600, y=100)
-phoneTwoEntry = Entry(root).place(x=660, y= 100, width= 130)
+phoneTwoEntry = Entry(root)
+phoneTwoEntry.place(x=660, y= 100, width= 130)
+phoneTwoEntry.bind("<FocusOut>", lambda event: validatePhoneNumber(phoneTwoEntry))
+
 
 # ROW 3
 # Email
