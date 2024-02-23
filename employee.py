@@ -24,8 +24,8 @@ menuFrame = Frame(root, bg="#F8C321", width=200)
 
 # Profile picture 
 image = Image.open("images/defaultPic.jpeg")
-photo = ImageTk.PhotoImage(image)
-defaultPhoto = Label(menuFrame, image=photo)
+profilePhoto = ImageTk.PhotoImage(image)
+defaultPhoto = Label(menuFrame, image=profilePhoto)
 defaultPhoto.place(x=20, y=20)
 #profile picture end
 
@@ -33,6 +33,24 @@ profileText = Label(menuFrame, text = "Your Profile", fg = "black",bg="#F8C321",
 profileText.place(x=40, y=180)
 menuFrame.pack(side="left", fill="y", expand=False)
 menuFrame.pack_propagate(False)
+
+# Dashboard image
+dashboardImage = Image.open("images/dashboard_icon.png")
+dashboardPhoto = ImageTk.PhotoImage(dashboardImage)
+dashboardButton = Button(menuFrame, text="Dashboard", image=dashboardPhoto, compound="left", bg="#F8C321")
+dashboardButton.place(x=15, y=300, width=170)
+
+# Directory image
+directoryImage = Image.open("images/directory_icon.png")
+directoryPhoto = ImageTk.PhotoImage(directoryImage)
+directoryButton = Button(menuFrame, text="Employee Directory", image=directoryPhoto, compound="left", bg="#F8C321")
+directoryButton.place(x=15, y=340, width=170)
+
+# Performance Management image
+perfomanceImage = Image.open("images/performance_icon.png")
+perfomancePhoto = ImageTk.PhotoImage(perfomanceImage)
+perfomanceButton = Button(menuFrame, text="Performance", image=perfomancePhoto, compound="left", bg="#F8C321")
+perfomanceButton.place(x=15, y=380, width=170)
 
 #Employee Information Bar
 
